@@ -55,13 +55,17 @@ export default function Footer() {
         {/* Brand + socials */}
         <div className="md:col-span-4">
           <div className="flex items-center gap-3">
-            <img src="logo.png" alt="" className="h-12 w-12 object-contain" />
+            <img
+              src="logo.png"
+              alt=""
+              className="h-14 w-20 rounded-md object-cover shadow-sm ring-1 ring-brand-200"
+            />
             <div className="leading-tight">
-              <div className="text-base font-semibold text-slate-900">
-                {company.shortName}
+              <div className="text-base font-bold tracking-wide text-brand-800">
+                SWARANBHARAT
               </div>
-              <div className="text-[11px] font-medium uppercase tracking-wide text-brand-700">
-                Exportsarathi
+              <div className="text-xs font-medium text-gold-600">
+                ExportSarathi
               </div>
             </div>
           </div>

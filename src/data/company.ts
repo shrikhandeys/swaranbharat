@@ -1,9 +1,9 @@
 export const company = {
-  name: "Swaranbharat Exportsarathi",
+  name: "Swaranbharat ExportSarathi",
   shortName: "Swaranbharat",
   tagline: "Your Trusted Global Trade Partner",
   description:
-    "Swaranbharat Exportsarathi is a Pune-based merchant exporter specialising in premium dehydrated agri-products — moringa leaf powder, onion powder, garlic powder, dehydrated flakes, herbs, and custom super-food powders — sourced from verified FSSAI-certified Indian manufacturers. We deliver export-grade quality, transparent pricing, and on-time worldwide shipping.",
+    "Swaranbharat ExportSarathi is a Pune-based merchant exporter specialising in premium dehydrated agri-products — moringa leaf powder, onion powder, garlic powder, dehydrated flakes, herbs, and custom super-food powders — sourced from verified FSSAI-certified Indian manufacturers. We deliver export-grade quality, transparent pricing, and on-time worldwide shipping.",
   established: "2025",
   domain: "swaranbharatexports.com",
 
@@ -31,7 +31,7 @@ export const company = {
   ],
 
   whatsappDefaultMessage:
-    "Hi Swaranbharat Exportsarathi, I'd like to inquire about your dehydrated agri products.",
+    "Hi Swaranbharat ExportSarathi, I'd like to inquire about your dehydrated agri products.",
 
   // Business hours shown in the footer "Get in touch" block.
   hours: {

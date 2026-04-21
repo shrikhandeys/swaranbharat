@@ -4,21 +4,32 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Brand palette derived from the Swaranbharat visiting card:
+        // deep navy blue (primary) with gold accent. Light shades are used
+        // for section backgrounds so the site stays airy and clean.
         brand: {
-          50: "#f4f8ed",
-          100: "#e6efd4",
-          200: "#cee0ab",
-          300: "#aecc78",
-          400: "#8fb74c",
-          500: "#729a33",
-          600: "#587a25",
-          700: "#445e1f",
-          800: "#384c1d",
-          900: "#2f401c",
+          50: "#f3f6fd",
+          100: "#e1e8f6",
+          200: "#c2d1ed",
+          300: "#8ba4d6",
+          400: "#5777b8",
+          500: "#3a5a9b",
+          600: "#2f487d",
+          700: "#263b68",
+          800: "#1e2d4d",
+          900: "#141d33",
         },
-        accent: {
-          500: "#d97706",
-          600: "#b45309",
+        gold: {
+          50: "#fbf6e3",
+          100: "#f6ecbf",
+          200: "#efdc8e",
+          300: "#e6c95b",
+          400: "#dcb63a",
+          500: "#c9a227",
+          600: "#a6831e",
+          700: "#85681b",
+          800: "#6a531c",
+          900: "#4c3b14",
         },
       },
       fontFamily: {

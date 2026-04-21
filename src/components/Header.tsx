@@ -23,14 +23,14 @@ export default function Header() {
           <img
             src="logo.png"
             alt={company.name}
-            className="h-10 w-10 object-contain"
+            className="h-12 w-[72px] rounded-md object-cover shadow-sm ring-1 ring-brand-200"
           />
           <div className="leading-tight">
-            <div className="text-sm font-semibold text-slate-900 sm:text-base">
-              {company.shortName}
+            <div className="text-sm font-bold tracking-wide text-brand-800 sm:text-base">
+              SWARANBHARAT
             </div>
-            <div className="text-[11px] font-medium uppercase tracking-wide text-brand-700">
-              Exportsarathi
+            <div className="text-[11px] font-medium tracking-wide text-gold-600">
+              ExportSarathi · Global Trade Partner
             </div>
           </div>
         </Link>
