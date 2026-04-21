@@ -2,26 +2,155 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────
+   Base theme tokens — adjusted by accessibility
+   controls (font-size, contrast, dark mode).
+   ───────────────────────────────────────────── */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b1122;
+  --muted: #f3f5f9;
+  --muted-foreground: #465885;
+  --card: #ffffff;
+  --card-foreground: #0b1122;
+  --border: #e3e8f1;
+  --primary: #1f2a45;
+  --primary-foreground: #ffffff;
+  --accent: #f6b626;
+  --accent-foreground: #1f2a45;
+  --ring: #f6b626;
+  --font-size-base: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html[data-theme="dark"] {
+  --background: #0b1122;
+  --foreground: #f3f5f9;
+  --muted: #1f2a45;
+  --muted-foreground: #c0cadb;
+  --card: #141c33;
+  --card-foreground: #f3f5f9;
+  --border: #293656;
+  --primary: #f6b626;
+  --primary-foreground: #0b1122;
+  --accent: #f6b626;
+  --accent-foreground: #0b1122;
+  --ring: #f6b626;
+}
+
+html[data-theme="high-contrast"] {
+  --background: #000000;
+  --foreground: #ffff00;
+  --muted: #000000;
+  --muted-foreground: #ffff00;
+  --card: #000000;
+  --card-foreground: #ffff00;
+  --border: #ffff00;
+  --primary: #ffff00;
+  --primary-foreground: #000000;
+  --accent: #ffff00;
+  --accent-foreground: #000000;
+  --ring: #ffff00;
+}
+
+html[data-theme="night-reading"] {
+  --background: #1a1a1a;
+  --foreground: #f5deb3;
+  --muted: #2a2a2a;
+  --muted-foreground: #e0c698;
+  --card: #222222;
+  --card-foreground: #f5deb3;
+  --border: #3a3a3a;
+  --primary: #f6b626;
+  --primary-foreground: #1a1a1a;
+  --accent: #f6b626;
+  --accent-foreground: #1a1a1a;
+  --ring: #f6b626;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
+*:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip link — visible on focus */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  z-index: 9999;
+  padding: 12px 16px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 600;
+  border-radius: 4px;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Google Translate widget — clean up default styling */
+.goog-te-banner-frame,
+.goog-te-gadget-icon,
+.skiptranslate > iframe {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+.goog-te-gadget {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+.goog-te-gadget .goog-te-combo {
+  margin: 0 !important;
+  padding: 4px 8px !important;
+  font-size: 0.875rem !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--border) !important;
+  background: var(--card) !important;
+  color: var(--card-foreground) !important;
+}
+
+/* Utility classes */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .container-x {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .gradient-gold {
+    background: linear-gradient(135deg, #f6b626 0%, #cd750a 100%);
+  }
+  .gradient-navy {
+    background: linear-gradient(135deg, #1f2a45 0%, #0b1122 100%);
   }
 }

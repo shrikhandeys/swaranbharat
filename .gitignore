@@ -34,3 +34,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# inquiry data (written at runtime — don't commit user submissions)
+/data/inquiries/
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# editor
+.idea/
+.vscode/
