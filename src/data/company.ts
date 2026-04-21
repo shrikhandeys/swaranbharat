@@ -1,11 +1,9 @@
-// Company profile — edit freely. Later the admin panel will manage this via DB.
-
 export const company = {
-  name: "Swaranbharat Exportsarathi",
+  name: "Swaranbharat ExportSarathi",
   shortName: "Swaranbharat",
   tagline: "Your Trusted Global Trade Partner",
   description:
-    "Swaranbharat Exportsarathi is a Pune-based merchant exporter specialising in premium dehydrated agri-products — moringa leaf powder, onion powder, garlic powder, dehydrated flakes, herbs, and custom super-food powders — sourced from verified FSSAI-certified Indian manufacturers. We deliver export-grade quality, transparent pricing, and on-time worldwide shipping.",
+    "Swaranbharat ExportSarathi is a Pune-based merchant exporter specialising in premium dehydrated agri-products — moringa leaf powder, onion powder, garlic powder, dehydrated flakes, herbs, and custom super-food powders — sourced from verified FSSAI-certified Indian manufacturers. We deliver export-grade quality, transparent pricing, and on-time worldwide shipping.",
   established: "2025",
   domain: "swaranbharatexports.com",
 
@@ -32,24 +30,24 @@ export const company = {
     { value: "24h", label: "Quote Response" },
   ],
 
-  // Social / advertising channels — add the URL once the page is created.
-  // Empty string = icon is hidden. Admin panel (Phase 2) will edit these.
-  socials: {
-    facebook: "",     // https://facebook.com/swaranbharatexportsarathi
-    instagram: "",    // https://instagram.com/swaranbharatexportsarathi
-    linkedin: "",     // https://linkedin.com/company/swaranbharat-exportsarathi
-    twitter: "",      // https://x.com/swaranbharatexp
-    youtube: "",      // https://youtube.com/@swaranbharatexportsarathi
-    pinterest: "",    // https://pinterest.com/swaranbharatexp
-    googleBusiness: "", // https://maps.app.goo.gl/... (your GMB listing)
+  whatsappDefaultMessage:
+    "Hi Swaranbharat ExportSarathi, I'd like to inquire about your dehydrated agri products.",
+
+  // Business hours shown in the footer "Get in touch" block.
+  hours: {
+    timings: "10 AM – 7 PM",
+    days: "Monday to Saturday",
+    timezone: "IST",
   },
 
-  // Pre-filled message when user taps WhatsApp button
-  whatsappDefaultMessage:
-    "Hi Swaranbharat Exportsarathi, I'd like to inquire about your dehydrated agri products (Moringa / Onion / Garlic / etc.). My details:",
-
-  businessModel:
-    "Currently operating as a merchant exporter sourcing premium commodities from trusted Indian manufacturers. Planned expansion into direct manufacturing within 2 years, alongside national and international import operations.",
-};
+  // Social handles — leave blank to hide the icon. Admin can fill these later.
+  socials: {
+    facebook: "",
+    instagram: "",
+    linkedin: "",
+    twitter: "",
+    youtube: "",
+  },
+} as const;
 
 export type Company = typeof company;
