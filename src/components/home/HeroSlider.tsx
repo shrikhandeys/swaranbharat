@@ -115,7 +115,6 @@ export default function HeroSlider() {
                 height={260}
                 priority
                 className="h-44 w-44 md:h-60 md:w-60 object-contain drop-shadow-[0_0_40px_rgba(246,182,38,0.45)]"
-                style={{ mixBlendMode: "screen" }}
               />
             </div>
           </div>
