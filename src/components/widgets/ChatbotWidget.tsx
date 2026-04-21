@@ -48,7 +48,7 @@ export default function ChatbotWidget() {
         aria-label={open ? "Close chat" : "Open chat assistant"}
         aria-expanded={open}
         data-testid="chatbot-toggle"
-        className="fixed bottom-5 right-5 z-[55] sm:right-[180px] flex items-center gap-2 rounded-full bg-brand-navy-900 px-4 py-3 text-white shadow-lg shadow-black/20 ring-1 ring-white/10 hover:scale-105 focus:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-gold-400/50 transition-transform"
+        className="fixed bottom-[88px] right-5 z-[55] flex items-center gap-2 rounded-full bg-brand-navy-900 px-4 py-3 text-white shadow-lg shadow-black/20 ring-1 ring-white/10 hover:scale-105 focus:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-gold-400/50 transition-transform"
       >
         {open ? <X size={22} aria-hidden="true" /> : <Bot size={22} aria-hidden="true" />}
         <span className="hidden sm:inline text-sm font-semibold">
@@ -61,7 +61,7 @@ export default function ChatbotWidget() {
           role="dialog"
           aria-label="Swaranbharat chat assistant"
           data-testid="chatbot-dialog"
-          className="fixed bottom-24 right-3 sm:right-5 z-[70] w-[min(380px,calc(100vw-1.5rem))] max-h-[70vh] flex flex-col rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] shadow-2xl"
+          className="fixed bottom-[152px] right-3 sm:right-5 z-[70] w-[min(380px,calc(100vw-1.5rem))] max-h-[65vh] flex flex-col rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--card-foreground)] shadow-2xl"
         >
           <header className="flex items-center justify-between gap-2 rounded-t-xl bg-brand-navy-900 px-4 py-3 text-white">
             <div className="flex items-center gap-2">

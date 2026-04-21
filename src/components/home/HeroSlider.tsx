@@ -102,14 +102,20 @@ export default function HeroSlider() {
           </div>
 
           <div className="relative justify-self-center md:justify-self-end">
-            <div className="relative h-48 w-48 md:h-64 md:w-64 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center border border-white/10">
+            {/* Soft radial glow — replaces the old square "pasted" look */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(closest-side,rgba(246,182,38,0.25),transparent_70%)] blur-2xl"
+            />
+            <div className="relative h-48 w-48 md:h-64 md:w-64 flex items-center justify-center">
               <Image
                 src="/logo.png"
                 alt={`${company.name} logo`}
-                width={200}
-                height={200}
+                width={260}
+                height={260}
                 priority
-                className="h-36 w-36 md:h-52 md:w-52 object-contain drop-shadow-[0_0_30px_rgba(246,182,38,0.35)]"
+                className="h-44 w-44 md:h-60 md:w-60 object-contain drop-shadow-[0_0_40px_rgba(246,182,38,0.45)]"
+                style={{ mixBlendMode: "screen" }}
               />
             </div>
           </div>

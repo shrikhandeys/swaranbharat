@@ -53,14 +53,15 @@ export default function Hero() {
 
         <div className="relative flex justify-center lg:justify-end">
           <div className="relative h-[320px] w-[320px] md:h-[400px] md:w-[400px]">
-            <div className="absolute inset-0 rounded-full bg-brand-gold-500/20 blur-2xl" />
+            <div className="absolute inset-0 rounded-full bg-brand-gold-500/20 blur-3xl" />
             <Image
               src="/logo.png"
               alt="Swaranbharat Exportsarathi — globe of global trade"
               fill
               priority
-              className="object-contain relative drop-shadow-2xl"
+              className="object-contain relative drop-shadow-[0_0_60px_rgba(246,182,38,0.45)]"
               sizes="(max-width: 768px) 320px, 400px"
+              style={{ mixBlendMode: "screen" }}
             />
           </div>
         </div>
