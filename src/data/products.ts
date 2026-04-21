@@ -1,6 +1,10 @@
-// Product catalog — initial focus: premium dehydrated agri products sourced from
-// verified Indian manufacturers. The admin panel (Phase 2) will let you manage
-// products, categories, photos, specs and videos directly from the dashboard.
+export type ProductCategory =
+  | "Super-Food Powders"
+  | "Dehydrated Vegetable Powders"
+  | "Dehydrated Flakes & Granules"
+  | "Dehydrated Herbs & Leaves"
+  | "Spices & Masala"
+  | "Instant Mixes & Ready-to-Cook";
 
 export type Product = {
   slug: string;
@@ -13,15 +17,6 @@ export type Product = {
   featured?: boolean;
 };
 
-export type ProductCategory =
-  | "Dehydrated Vegetable Powders"
-  | "Dehydrated Flakes & Granules"
-  | "Dehydrated Herbs & Leaves"
-  | "Super-Food Powders"
-  | "Spices & Masala"
-  | "Instant Mixes & Ready-to-Cook"
-  | "Other";
-
 export const productCategories: ProductCategory[] = [
   "Super-Food Powders",
   "Dehydrated Vegetable Powders",
@@ -29,11 +24,9 @@ export const productCategories: ProductCategory[] = [
   "Dehydrated Herbs & Leaves",
   "Spices & Masala",
   "Instant Mixes & Ready-to-Cook",
-  "Other",
 ];
 
 export const products: Product[] = [
-  // ── Super-food powders (hero product) ──────────────────────────
   {
     slug: "moringa-powder",
     name: "Moringa Leaf Powder",
@@ -47,17 +40,15 @@ export const products: Product[] = [
       "FSSAI / export-grade",
     ],
     hsCode: "12119029",
-    image: "/products/moringa-powder.jpg",
+    image: "products/moringa-powder.jpg",
     featured: true,
   },
-
-  // ── Dehydrated vegetable powders ──────────────────────────────
   {
     slug: "onion-powder",
     name: "Dehydrated Onion Powder",
     category: "Dehydrated Vegetable Powders",
     shortDescription:
-      "Dehydrated red onion powder with strong flavour and long shelf life — ideal for seasonings, soups, and ready-to-cook mixes.",
+      "Dehydrated red onion powder with strong flavour and long shelf life — ideal for seasonings, soups and ready-to-cook mixes.",
     highlights: [
       "80 / 100 mesh options",
       "Moisture < 6%",
@@ -65,7 +56,7 @@ export const products: Product[] = [
       "Bulk & private-label packaging",
     ],
     hsCode: "07129000",
-    image: "/products/onion-powder.jpg",
+    image: "products/onion-powder.jpg",
     featured: true,
   },
   {
@@ -73,15 +64,10 @@ export const products: Product[] = [
     name: "Dehydrated Garlic Powder",
     category: "Dehydrated Vegetable Powders",
     shortDescription:
-      "Pure white garlic powder with intense aroma, made from carefully dehydrated Indian garlic.",
-    highlights: [
-      "Allicin-retained drying",
-      "100 mesh / custom",
-      "Low moisture, low microbial count",
-      "Consistent colour & taste",
-    ],
+      "Pungent, aromatic garlic powder ideal for seasonings, ready-to-cook mixes and food processing.",
+    highlights: ["Allium-rich aroma", "Moisture-controlled packaging", "Food-grade"],
     hsCode: "07129000",
-    image: "/products/garlic-powder.jpg",
+    image: "products/garlic-powder.jpg",
     featured: true,
   },
   {
@@ -89,50 +75,40 @@ export const products: Product[] = [
     name: "Dehydrated Ginger Powder",
     category: "Dehydrated Vegetable Powders",
     shortDescription:
-      "Pungent, aromatic dehydrated ginger powder — widely used in beverages, masalas, and health formulations.",
-    highlights: [
-      "Whole / cracked / powder options",
-      "High essential-oil content",
-      "Export-ready packaging",
-    ],
+      "Spicy, warm ginger powder — used widely in beverages, masala mixes and confections.",
+    highlights: ["High-oil Indian ginger", "Fine mesh", "Lab-tested"],
     hsCode: "09101100",
-    image: "/products/ginger-powder.jpg",
+    image: "products/ginger-powder.jpg",
   },
   {
     slug: "tomato-powder",
     name: "Dehydrated Tomato Powder",
     category: "Dehydrated Vegetable Powders",
     shortDescription:
-      "Rich-red dehydrated tomato powder with natural tangy flavour — perfect for sauces, soups, and seasonings.",
-    highlights: [
-      "High lycopene content",
-      "No artificial colour",
-      "Instant reconstitution",
-    ],
+      "Natural tomato powder with deep red colour — ideal for soups, sauces and seasoning bases.",
+    highlights: ["No added colour", "Sun/ hot-air dried", "Bright red hue"],
     hsCode: "07129090",
-    image: "/products/tomato-powder.jpg",
+    image: "products/tomato-powder.jpg",
   },
   {
     slug: "beetroot-powder",
     name: "Dehydrated Beetroot Powder",
     category: "Dehydrated Vegetable Powders",
     shortDescription:
-      "Deep-red beetroot powder, a natural colourant and nutrient source for health drinks & bakery.",
-    highlights: ["Natural colour", "No added sugar", "Nitrate-rich"],
+      "Vibrant beetroot powder — a natural colorant and nutrient booster for juices, bakes and health mixes.",
+    highlights: ["Natural colorant", "Rich in iron & nitrates", "Fine / medium mesh"],
     hsCode: "07129090",
-    image: "/products/beetroot-powder.jpg",
+    image: "products/beetroot-powder.jpg",
   },
-
-  // ── Flakes & granules ─────────────────────────────────────────
   {
     slug: "red-onion-flakes",
     name: "Dehydrated Red Onion Flakes",
     category: "Dehydrated Flakes & Granules",
     shortDescription:
-      "Crisp red onion flakes / kibbled — widely used in seasonings, instant foods, and home cooking.",
-    highlights: ["Size: 3-5 mm / 5-10 mm", "Low moisture", "Strong colour retention"],
-    hsCode: "07129000",
-    image: "/products/red-onion-flakes.jpg",
+      "Uniformly cut red onion flakes — strong flavour and colour, ideal for garnishing and instant mixes.",
+    highlights: ["3–5 mm / 5–10 mm sizes", "Moisture < 7%", "Export packing"],
+    hsCode: "07122000",
+    image: "products/red-onion-flakes.jpg",
     featured: true,
   },
   {
@@ -140,46 +116,39 @@ export const products: Product[] = [
     name: "Dehydrated Pink Onion Flakes",
     category: "Dehydrated Flakes & Granules",
     shortDescription:
-      "Mild-flavoured pink onion flakes for premium retail and food-service applications.",
-    highlights: ["Uniform cut", "Gentle flavour profile", "Export-grade"],
-    hsCode: "07129000",
-    image: "/products/pink-onion-flakes.jpg",
+      "Milder pink onion flakes — lighter aroma with a balanced sweet-savoury profile.",
+    highlights: ["Uniform cut", "Low moisture", "Bulk / retail packs"],
+    hsCode: "07122000",
+    image: "products/pink-onion-flakes.jpg",
   },
   {
     slug: "fried-onion",
     name: "Crispy Fried Onion",
     category: "Dehydrated Flakes & Granules",
     shortDescription:
-      "Golden, crunchy fried onion — a classic Indian topping for biryanis, salads, and instant meals.",
-    highlights: [
-      "Fried in food-grade oil",
-      "No artificial colour",
-      "Retail & HoReCa packs",
-    ],
-    hsCode: "20055900",
-    image: "/products/fried-onion.jpg",
+      "Golden-brown crispy fried onions — ready-to-use topping for biryani, soups and snacks.",
+    highlights: ["Palm/ sunflower fried variants", "Crisp texture", "Long shelf life"],
+    image: "products/fried-onion.jpg",
   },
-
-  // ── Herbs & leaves ────────────────────────────────────────────
   {
     slug: "coriander-leaves-powder",
     name: "Dehydrated Coriander Leaves Powder",
     category: "Dehydrated Herbs & Leaves",
     shortDescription:
-      "Fresh-green coriander-leaf powder capturing the aroma of fresh coriander — ready to use year-round.",
-    highlights: ["Natural green colour", "Low-temperature drying", "Long shelf life"],
-    hsCode: "09109929",
-    image: "/products/coriander-leaves-powder.jpg",
+      "Aromatic coriander leaf powder — preserved colour, flavour and aroma for year-round use.",
+    highlights: ["Rich green colour", "No added preservatives", "Retail / bulk"],
+    hsCode: "09099990",
+    image: "products/coriander-leaves-powder.jpg",
   },
   {
     slug: "curry-leaves-powder",
     name: "Dehydrated Curry Leaves Powder",
     category: "Dehydrated Herbs & Leaves",
     shortDescription:
-      "Aromatic curry-leaf powder — essential for South Indian cuisine and health-food products.",
-    highlights: ["Pure dehydrated curry leaves", "No additives", "Fine-mesh powder"],
-    hsCode: "09109929",
-    image: "/products/curry-leaves-powder.jpg",
+      "Classic South-Indian curry leaf powder — strong aroma, ideal for tempering and chutney powders.",
+    highlights: ["Shade-dried", "Fine aroma", "Lab-tested"],
+    hsCode: "09109990",
+    image: "products/curry-leaves-powder.jpg",
   },
   {
     slug: "green-chilli",
@@ -189,10 +158,8 @@ export const products: Product[] = [
       "Spicy dehydrated green chilli in flakes / powder — preserves heat and fresh-chilli character.",
     highlights: ["Whole / flakes / powder", "SHU-graded", "Export packaging"],
     hsCode: "09042120",
-    image: "/products/green-chilli.jpg",
+    image: "products/green-chilli.jpg",
   },
-
-  // ── Spices & masala ───────────────────────────────────────────
   {
     slug: "turmeric-powder",
     name: "Turmeric Powder",
@@ -201,7 +168,7 @@ export const products: Product[] = [
       "High-curcumin (3%+) Indian turmeric powder with deep natural colour and lab-certified purity.",
     highlights: ["Curcumin 3%+", "Sulphur-free", "Moisture-controlled packaging"],
     hsCode: "09103020",
-    image: "/products/turmeric-powder.jpg",
+    image: "products/turmeric-powder.jpg",
     featured: true,
   },
   {
@@ -210,27 +177,17 @@ export const products: Product[] = [
     category: "Spices & Masala",
     shortDescription:
       "Traditional Indian masalas and private-label spice blends formulated to your specifications.",
-    highlights: [
-      "Custom formulations",
-      "Private-label packaging",
-      "FSSAI-compliant",
-    ],
-    image: "/products/masala-blends.jpg",
+    highlights: ["Custom formulations", "Private-label packaging", "FSSAI-compliant"],
+    image: "products/masala-blends.jpg",
   },
-
-  // ── Instant mixes ─────────────────────────────────────────────
   {
     slug: "instant-misal",
     name: "Instant Misal & Ready-to-Cook Mixes",
     category: "Instant Mixes & Ready-to-Cook",
     shortDescription:
-      "Authentic Indian ready-to-cook mixes — Instant Misal, curry pastes, and more. Private-label ready.",
-    highlights: [
-      "Authentic regional recipes",
-      "Long shelf life",
-      "Retail pouches / bulk",
-    ],
-    image: "/products/instant-misal.jpg",
+      "Authentic Indian ready-to-cook mixes — Instant Misal, curry pastes and more. Private-label ready.",
+    highlights: ["Authentic regional recipes", "Long shelf life", "Retail pouches / bulk"],
+    image: "products/instant-misal.jpg",
   },
   {
     slug: "dehydrated-sprouts",
@@ -239,6 +196,6 @@ export const products: Product[] = [
     shortDescription:
       "Convenient dehydrated sprouted moth beans (matki) — rehydrates in minutes for healthy meals.",
     highlights: ["Nutrient-preserved drying", "No preservatives", "Long shelf life"],
-    image: "/products/dehydrated-sprouts.jpg",
+    image: "products/dehydrated-sprouts.jpg",
   },
 ];

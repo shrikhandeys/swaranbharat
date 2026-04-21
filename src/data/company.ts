@@ -1,5 +1,3 @@
-// Company profile — edit freely. Later the admin panel will manage this via DB.
-
 export const company = {
   name: "Swaranbharat Exportsarathi",
   shortName: "Swaranbharat",
@@ -32,24 +30,8 @@ export const company = {
     { value: "24h", label: "Quote Response" },
   ],
 
-  // Social / advertising channels — add the URL once the page is created.
-  // Empty string = icon is hidden. Admin panel (Phase 2) will edit these.
-  socials: {
-    facebook: "",     // https://facebook.com/swaranbharatexportsarathi
-    instagram: "",    // https://instagram.com/swaranbharatexportsarathi
-    linkedin: "",     // https://linkedin.com/company/swaranbharat-exportsarathi
-    twitter: "",      // https://x.com/swaranbharatexp
-    youtube: "",      // https://youtube.com/@swaranbharatexportsarathi
-    pinterest: "",    // https://pinterest.com/swaranbharatexp
-    googleBusiness: "", // https://maps.app.goo.gl/... (your GMB listing)
-  },
-
-  // Pre-filled message when user taps WhatsApp button
   whatsappDefaultMessage:
-    "Hi Swaranbharat Exportsarathi, I'd like to inquire about your dehydrated agri products (Moringa / Onion / Garlic / etc.). My details:",
-
-  businessModel:
-    "Currently operating as a merchant exporter sourcing premium commodities from trusted Indian manufacturers. Planned expansion into direct manufacturing within 2 years, alongside national and international import operations.",
-};
+    "Hi Swaranbharat Exportsarathi, I'd like to inquire about your dehydrated agri products.",
+} as const;
 
 export type Company = typeof company;

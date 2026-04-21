@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swaranbharat Exportsarathi — Website
 
-## Getting Started
+Lean, static marketing site for **Swaranbharat Exportsarathi** — a Pune-based
+merchant exporter of premium Indian dehydrated agri-products.
 
-First, run the development server:
+Built with **Vite + React + TypeScript + Tailwind CSS**. The production build
+is 100% static HTML/CSS/JS — it runs on any basic shared host (Hostinger
+Single / Premium, etc.). No Node.js required on the server.
+
+## Quickstart
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # outputs to ./dist
+npm run preview    # preview the built site locally
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploying to Hostinger (shared hosting)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Run `npm run build`. The static site is written to `dist/`.
+2. In Hostinger's **File Manager**, open `public_html/` (or your domain folder).
+3. Upload **the contents** of `dist/` (not the folder itself) to `public_html/`.
+4. Visit your domain — the site should load immediately.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Routing uses `HashRouter`, so deep links like `/#/products` work without any
+`.htaccess` rewrites.
 
-## Learn More
+### Contact form (optional)
 
-To learn more about Next.js, take a look at the following resources:
+The contact form uses [Web3Forms](https://web3forms.com) (free: 250
+submissions/month). To enable real email delivery:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Get a free access key at https://web3forms.com/.
+2. Create a `.env` file at the project root:
+   ```
+   VITE_WEB3FORMS_KEY=your-key-here
+   ```
+3. Rebuild (`npm run build`) and re-upload `dist/`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Without a key, the form gracefully falls back to opening the user's mail
+client with a prefilled email to `sales@swaranbharatexports.com`.
 
-## Deploy on Vercel
+## Project layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+  App.tsx            # routes
+  main.tsx           # entry point (HashRouter)
+  index.css          # Tailwind base + shared utility classes
+  components/        # Header, Footer, ProductCard
+  pages/             # Home, Products, About, Contact
+  data/              # company profile + product catalog
+public/
+  logo.png
+  products/*.jpg     # product photos
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Edit `src/data/company.ts` and `src/data/products.ts` to update content — no
+code changes needed.
