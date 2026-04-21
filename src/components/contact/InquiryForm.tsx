@@ -222,27 +222,23 @@ export default function InquiryForm() {
         </Field>
       </fieldset>
 
-      {/* User type */}
+      {/* User type — single dropdown; sub-fields appear based on selection */}
       <fieldset className="space-y-2">
         <legend className="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">
           2. I am a *
         </legend>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {userTypes.map((t) => (
-            <label
-              key={t.value}
-              className="flex items-start gap-2 rounded-md border border-[var(--border)] px-3 py-2 text-sm cursor-pointer hover:border-brand-gold-500 has-[:checked]:border-brand-gold-500 has-[:checked]:bg-brand-gold-500/10"
-            >
-              <input
-                type="radio"
-                value={t.value}
-                {...register("userType")}
-                className="mt-0.5"
-              />
-              <span>{t.label}</span>
-            </label>
-          ))}
-        </div>
+        <Field label="Select your profile *" error={errors.userType?.message}>
+          <select {...register("userType")} className={inputClass} aria-label="I am a">
+            {userTypes.map((t) => (
+              <option key={t.value} value={t.value}>
+                {t.label}
+              </option>
+            ))}
+          </select>
+        </Field>
+        <p className="text-xs text-[var(--muted-foreground)]">
+          We&apos;ll show a short form tailored to your profile so you only fill what&apos;s relevant.
+        </p>
       </fieldset>
 
       {/* Dynamic fields by user type */}
@@ -367,6 +363,104 @@ export default function InquiryForm() {
 
           <Field label="Notable Previous Clients (optional)">
             <input type="text" {...register("previousClients")} className={inputClass} />
+          </Field>
+        </fieldset>
+      )}
+
+      {userType === "retail" && (
+        <fieldset className="grid gap-4 sm:grid-cols-2 rounded-lg bg-[var(--muted)]/50 p-4">
+          <legend className="col-span-full text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mb-1">
+            3. What you need
+          </legend>
+          <Field label="Product Interest">
+            <select {...register("productInterest")} className={inputClass}>
+              <option value="">Select a product</option>
+              {products.map((p) => (
+                <option key={p.slug} value={p.name}>
+                  {p.name}
+                </option>
+              ))}
+              <option value="Other / Custom">Other / Custom</option>
+            </select>
+          </Field>
+          <Field label="Quantity (small pack size)">
+            <input
+              type="text"
+              {...register("quantity")}
+              className={inputClass}
+              placeholder="e.g. 500g, 1 kg"
+            />
+          </Field>
+        </fieldset>
+      )}
+
+      {userType === "service" && (
+        <fieldset className="grid gap-4 sm:grid-cols-2 rounded-lg bg-[var(--muted)]/50 p-4">
+          <legend className="col-span-full text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mb-1">
+            3. Service provider profile
+          </legend>
+          <Field label="Company Name">
+            <input type="text" {...register("companyName")} className={inputClass} />
+          </Field>
+          <Field label="Service Offered">
+            <input
+              type="text"
+              {...register("productOffered")}
+              className={inputClass}
+              placeholder="Logistics / Packaging / Certification / Quality inspection"
+            />
+          </Field>
+          <Field label="Coverage / Region">
+            <input type="text" {...register("regionCovered")} className={inputClass} />
+          </Field>
+          <Field label="Certifications (optional)">
+            <input type="text" {...register("certifications")} className={inputClass} />
+          </Field>
+        </fieldset>
+      )}
+
+      {userType === "investor" && (
+        <fieldset className="grid gap-4 sm:grid-cols-2 rounded-lg bg-[var(--muted)]/50 p-4">
+          <legend className="col-span-full text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mb-1">
+            3. Investor / Partner profile
+          </legend>
+          <Field label="Company / Fund">
+            <input type="text" {...register("companyName")} className={inputClass} />
+          </Field>
+          <Field label="Investment range (optional)">
+            <input
+              type="text"
+              {...register("targetPrice")}
+              className={inputClass}
+              placeholder="e.g. USD 50k – 500k"
+            />
+          </Field>
+          <Field label="Area of interest">
+            <input
+              type="text"
+              {...register("productInterest")}
+              className={inputClass}
+              placeholder="e.g. Moringa category, processing capacity, export partnership"
+            />
+          </Field>
+          <Field label="LinkedIn / website (optional)">
+            <input type="text" {...register("previousClients")} className={inputClass} />
+          </Field>
+        </fieldset>
+      )}
+
+      {userType === "other" && (
+        <fieldset className="grid gap-4 rounded-lg bg-[var(--muted)]/50 p-4">
+          <legend className="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mb-1">
+            3. Tell us a bit more
+          </legend>
+          <Field label="How can we help?">
+            <input
+              type="text"
+              {...register("productInterest")}
+              className={inputClass}
+              placeholder="A short description of your interest"
+            />
           </Field>
         </fieldset>
       )}
