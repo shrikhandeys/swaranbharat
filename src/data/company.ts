@@ -32,6 +32,22 @@ export const company = {
 
   whatsappDefaultMessage:
     "Hi Swaranbharat Exportsarathi, I'd like to inquire about your dehydrated agri products.",
+
+  // Business hours shown in the footer "Get in touch" block.
+  hours: {
+    timings: "10 AM – 7 PM",
+    days: "Monday to Saturday",
+    timezone: "IST",
+  },
+
+  // Social handles — leave blank to hide the icon. Admin can fill these later.
+  socials: {
+    facebook: "",
+    instagram: "",
+    linkedin: "",
+    twitter: "",
+    youtube: "",
+  },
 } as const;
 
 export type Company = typeof company;
